@@ -40,11 +40,8 @@ public class Human implements BmiCalculable {
         age = this.getAge();
         boolean hasNormalizedBmi = evaluateNormalizedBmi(age,bmi);
         this.setHasNormalizedBmi(hasNormalizedBmi);
-    }
-
-    public static void main(){
-        Human obelix = new Human(19,186,205,"Obelix");
-        System.out.println(obelix.getOutput());
+        String output = this.constructOutput();
+        this.setOutput(output);
     }
 
     //get&set
@@ -144,7 +141,7 @@ public class Human implements BmiCalculable {
     }
 
     public double calculateBmi(double weight, double height){
-        return (weight / height*height) ;
+        return (weight / height*height ) ;
     }
 
     public statusEnum evaluateBmi(double bmi){
@@ -191,13 +188,13 @@ public class Human implements BmiCalculable {
     public String constructOutput(){
 
          String message = "" +
-                "Name: "+this.getName()+
-                "Height:"+ this.getHeight()+
-                "Weight:"+ this.getWeight() +
-                "Optimal weight:" + this.getIdealWeight() +
-                "Bmi:" + this.getBmi() +
-                "State:"+ this.getStatus() +
-                "Has normalized bmi:"+ this.getHasNormalizedBmi()
+                "Name: "+this.getName()+ "\n" +
+                "Height:"+ this.getHeight() + "\n" +
+                "Weight:"+ this.getWeight() + "\n" +
+                "Optimal weight:" + this.getIdealWeight() + "\n" +
+                "Bmi:" + this.getBmi() + "\n" +
+                "State:"+ this.getStatus() + "\n" +
+                "Has normalized bmi:"+ this.getHasNormalizedBmi() + "\n"
                 ;
 
         return message;
